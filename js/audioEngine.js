@@ -22,6 +22,7 @@ export class Voice {
 
         // Musical parameters
         this.scale = [];
+        this.scaleName = 'C Dorian'; // Store scale name for presets
         this.pattern = [];
         this.currentStep = 0;
         this.synthType = 'piano';
@@ -48,6 +49,7 @@ export class Voice {
     setScale(scaleName) {
         const scaleConfig = scalePresets[scaleName];
         if (scaleConfig) {
+            this.scaleName = scaleName;
             this.scale = getScaleFrequencies(scaleConfig.root, scaleConfig.type, 2);
         }
     }
@@ -288,6 +290,9 @@ export class AudioEngine {
 
     // Get analyser data for visualizer
     getAnalyserData() {
+        if (!this.analyser) {
+            return new Uint8Array(128); // Return empty array if not initialized
+        }
         const bufferLength = this.analyser.frequencyBinCount;
         const dataArray = new Uint8Array(bufferLength);
         this.analyser.getByteTimeDomainData(dataArray);
@@ -295,6 +300,9 @@ export class AudioEngine {
     }
 
     getFrequencyData() {
+        if (!this.analyser) {
+            return new Uint8Array(128); // Return empty array if not initialized
+        }
         const bufferLength = this.analyser.frequencyBinCount;
         const dataArray = new Uint8Array(bufferLength);
         this.analyser.getByteFrequencyData(dataArray);
@@ -311,7 +319,8 @@ export class AudioEngine {
                 patternType: v.patternType,
                 euclideanHits: v.euclideanHits,
                 euclideanSteps: v.euclideanSteps,
-                volume: v.volumeNode.gain.value
+                volume: v.volumeNode.gain.value,
+                scale: v.scaleName || 'C Dorian'
             }))
         };
     }
@@ -329,6 +338,7 @@ export class AudioEngine {
         state.voices.forEach(voiceData => {
             const voice = this.addVoice();
             voice.setSynthType(voiceData.synthType);
+            voice.setScale(voiceData.scale || 'C Dorian');
             voice.setEffect(voiceData.effectType, 0.5);
             voice.setPattern(voiceData.patternType, voiceData.euclideanHits, voiceData.euclideanSteps);
             voice.setVolume(voiceData.volume);

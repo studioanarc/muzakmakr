@@ -170,7 +170,7 @@ export class UIController {
                 <div class="control-group">
                     <label>Scale</label>
                     <select class="scale-select">
-                        ${this.getScaleOptions()}
+                        ${this.getScaleOptions(voice.scaleName)}
                     </select>
                 </div>
 
@@ -224,9 +224,9 @@ export class UIController {
         this.attachVoiceEventListeners(voiceDiv, voice);
     }
 
-    getScaleOptions() {
+    getScaleOptions(selectedScale = 'C Dorian') {
         return Object.keys(scalePresets).map(name =>
-            `<option value="${name}">${name}</option>`
+            `<option value="${name}" ${name === selectedScale ? 'selected' : ''}>${name}</option>`
         ).join('');
     }
 
