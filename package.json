@@ -1,0 +1,27 @@
+{
+  "name": "muzakmakr",
+  "version": "1.0.0",
+  "description": "Generative minimal music webapp - Philip Glass, tech-dub, ambient styles",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "start": "python3 -m http.server 8080"
+  },
+  "keywords": [
+    "generative-music",
+    "minimal-music",
+    "philip-glass",
+    "tech-dub",
+    "ambient",
+    "web-audio",
+    "euclidean-rhythms",
+    "synthesizer"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/studioanarc/muzakmakr"
+  }
+}

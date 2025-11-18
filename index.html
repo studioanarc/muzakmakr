@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUZAKMAKR - Generative Minimal Music</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MUZAKMAKR</h1>
+            <div class="header-controls">
+                <select id="preset-select">
+                    <option value="">Select Preset...</option>
+                </select>
+                <button id="save-btn">Save</button>
+                <button id="random-btn">Random</button>
+            </div>
+        </header>
+
+        <main id="voices-container">
+            <!-- Voices will be dynamically generated -->
+        </main>
+
+        <footer>
+            <div class="transport">
+                <div class="tempo-control">
+                    <label for="tempo">BPM</label>
+                    <input type="number" id="tempo" value="85" min="40" max="200">
+                </div>
+                <button id="play-btn" class="play-button">▶ PLAY</button>
+                <div class="master-volume">
+                    <label for="master-vol">Master</label>
+                    <input type="range" id="master-vol" min="0" max="100" value="75">
+                </div>
+            </div>
+            <div class="visualizer">
+                <canvas id="visualizer"></canvas>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
