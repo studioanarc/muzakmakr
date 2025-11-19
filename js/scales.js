@@ -35,9 +35,9 @@ export const scaleFormulas = {
 };
 
 // Generate scale from root note and formula
-export const generateScale = (root, scaleType, octaves = 3) => {
+export const generateScale = (root, scaleType, octaves = 3, startOctave = 4) => {
     const formula = scaleFormulas[scaleType] || scaleFormulas.dorian;
-    const rootMidi = notes[root] + 48; // Start at C3
+    const rootMidi = notes[root] + (startOctave * 12); // Configurable starting octave
     const scale = [];
 
     for (let oct = 0; oct < octaves; oct++) {
@@ -50,8 +50,8 @@ export const generateScale = (root, scaleType, octaves = 3) => {
 };
 
 // Get frequency array from scale
-export const getScaleFrequencies = (root, scaleType, octaves = 3) => {
-    const midiNotes = generateScale(root, scaleType, octaves);
+export const getScaleFrequencies = (root, scaleType, octaves = 3, startOctave = 4) => {
+    const midiNotes = generateScale(root, scaleType, octaves, startOctave);
     return midiNotes.map(midiToFreq);
 };
 
@@ -86,14 +86,22 @@ export const getChord = (rootFreq, voicing) => {
 
 // Preset scale configurations for quick access
 export const scalePresets = {
-    'C Dorian': { root: 'C', type: 'dorian' },
-    'D Phrygian': { root: 'D', type: 'phrygian' },
-    'A Aeolian': { root: 'A', type: 'aeolian' },
-    'E Minor Pent': { root: 'E', type: 'minor_pentatonic' },
-    'C Minor Pent': { root: 'C', type: 'minor_pentatonic' },
-    'G Mixolydian': { root: 'G', type: 'mixolydian' },
-    'C Bass': { root: 'C', type: 'bass_notes' },
-    'Eb Bass': { root: 'Eb', type: 'bass_notes' }
+    // Melodic scales (start at C4)
+    'C Dorian': { root: 'C', type: 'dorian', octave: 4 },
+    'D Phrygian': { root: 'D', type: 'phrygian', octave: 4 },
+    'A Aeolian': { root: 'A', type: 'aeolian', octave: 4 },
+    'E Minor Pent': { root: 'E', type: 'minor_pentatonic', octave: 4 },
+    'C Minor Pent': { root: 'C', type: 'minor_pentatonic', octave: 4 },
+    'G Mixolydian': { root: 'G', type: 'mixolydian', octave: 4 },
+
+    // Bass scales (start at C1 for deep sub-bass)
+    'C Bass': { root: 'C', type: 'bass_notes', octave: 1 },
+    'D Bass': { root: 'D', type: 'bass_notes', octave: 1 },
+    'E Bass': { root: 'E', type: 'bass_notes', octave: 1 },
+    'F Bass': { root: 'F', type: 'bass_notes', octave: 1 },
+    'G Bass': { root: 'G', type: 'bass_notes', octave: 1 },
+    'A Bass': { root: 'A', type: 'bass_notes', octave: 1 },
+    'Eb Bass': { root: 'Eb', type: 'bass_notes', octave: 1 }
 };
 
 // Get random note from scale (for generative algorithms)

@@ -4,34 +4,34 @@
 export const presets = {
     'Glass Arpeggios': {
         name: 'Glass Arpeggios',
-        description: 'Philip Glass-style minimal arpeggios',
-        bpm: 132,
+        description: 'Philip Glass-style cascading minimal patterns',
+        bpm: 126,
         voices: [
             {
                 synthType: 'piano',
                 effectType: 'reverb',
                 patternType: 'euclidean',
-                euclideanHits: 11,
+                euclideanHits: 13,
                 euclideanSteps: 16,
-                volume: 0.6,
+                volume: 0.55,
                 scale: 'C Dorian'
             },
             {
                 synthType: 'piano',
-                effectType: 'reverb',
+                effectType: 'delay',
                 patternType: 'euclidean',
-                euclideanHits: 8,
+                euclideanHits: 9,
                 euclideanSteps: 16,
-                volume: 0.5,
+                volume: 0.45,
                 scale: 'C Dorian'
             },
             {
                 synthType: 'bass',
                 effectType: 'none',
                 patternType: 'euclidean',
-                euclideanHits: 4,
-                euclideanSteps: 16,
-                volume: 0.7,
+                euclideanHits: 3,
+                euclideanSteps: 8,
+                volume: 0.65,
                 scale: 'C Bass'
             }
         ]
@@ -39,52 +39,52 @@ export const presets = {
 
     'Dub Pressure': {
         name: 'Dub Pressure',
-        description: 'Deep tech-dub with heavy effects',
-        bpm: 78,
+        description: 'Deep sub-bass with dub echoes and heavy groove',
+        bpm: 82,
         voices: [
             {
                 synthType: 'bass',
                 effectType: 'distortion',
                 patternType: 'euclidean',
-                euclideanHits: 5,
+                euclideanHits: 7,
                 euclideanSteps: 16,
-                volume: 0.8,
-                scale: 'Eb Bass'
+                volume: 0.75,
+                scale: 'E Bass'
             },
             {
                 synthType: 'piano',
                 effectType: 'delay',
                 patternType: 'euclidean',
-                euclideanHits: 7,
+                euclideanHits: 5,
                 euclideanSteps: 16,
-                volume: 0.4,
-                scale: 'D Phrygian'
+                volume: 0.35,
+                scale: 'E Minor Pent'
             },
             {
                 synthType: 'drum',
-                effectType: 'reverb',
+                effectType: 'bitcrush',
                 patternType: 'euclidean',
-                euclideanHits: 9,
+                euclideanHits: 8,
                 euclideanSteps: 16,
-                volume: 0.6,
-                scale: 'C Dorian'
+                volume: 0.55,
+                scale: 'E Minor Pent'
             }
         ]
     },
 
     'Ambient Decay': {
         name: 'Ambient Decay',
-        description: 'Dark ambient with distorted textures',
-        bpm: 65,
+        description: 'Lush pads with lo-fi percussion textures',
+        bpm: 68,
         voices: [
             {
                 synthType: 'pad',
                 effectType: 'reverb',
                 patternType: 'euclidean',
-                euclideanHits: 3,
+                euclideanHits: 4,
                 euclideanSteps: 16,
-                volume: 0.5,
-                scale: 'E Minor Pent'
+                volume: 0.55,
+                scale: 'A Aeolian'
             },
             {
                 synthType: 'drum',
@@ -92,17 +92,17 @@ export const presets = {
                 patternType: 'euclidean',
                 euclideanHits: 5,
                 euclideanSteps: 13,
-                volume: 0.7,
+                volume: 0.5,
                 scale: 'A Aeolian'
             },
             {
                 synthType: 'bass',
-                effectType: 'filter',
+                effectType: 'reverb',
                 patternType: 'euclidean',
-                euclideanHits: 2,
+                euclideanHits: 3,
                 euclideanSteps: 16,
-                volume: 0.6,
-                scale: 'E Minor Pent'
+                volume: 0.5,
+                scale: 'A Bass'
             }
         ]
     },
@@ -179,34 +179,34 @@ export const presets = {
 
     'Stott Textures': {
         name: 'Stott Textures',
-        description: 'Andy Stott-inspired dark textures',
-        bpm: 72,
+        description: 'Deep sub pressure with evolving dark pads',
+        bpm: 75,
         voices: [
             {
                 synthType: 'bass',
                 effectType: 'delay',
                 patternType: 'euclidean',
-                euclideanHits: 6,
+                euclideanHits: 7,
                 euclideanSteps: 16,
-                volume: 0.8,
-                scale: 'C Bass'
+                volume: 0.7,
+                scale: 'D Bass'
             },
             {
                 synthType: 'pad',
                 effectType: 'filter',
                 patternType: 'euclidean',
-                euclideanHits: 4,
+                euclideanHits: 5,
                 euclideanSteps: 16,
-                volume: 0.4,
-                scale: 'C Minor Pent'
+                volume: 0.5,
+                scale: 'D Phrygian'
             },
             {
                 synthType: 'drum',
                 effectType: 'distortion',
                 patternType: 'euclidean',
-                euclideanHits: 7,
+                euclideanHits: 9,
                 euclideanSteps: 16,
-                volume: 0.6,
+                volume: 0.5,
                 scale: 'D Phrygian'
             }
         ]
@@ -214,40 +214,40 @@ export const presets = {
 
     'Sparse Minimal': {
         name: 'Sparse Minimal',
-        description: 'Very minimal, lots of space',
-        bpm: 95,
+        description: 'Space and silence as compositional elements',
+        bpm: 92,
         voices: [
             {
                 synthType: 'piano',
                 effectType: 'reverb',
                 patternType: 'euclidean',
-                euclideanHits: 3,
+                euclideanHits: 4,
                 euclideanSteps: 16,
-                volume: 0.5,
+                volume: 0.55,
                 scale: 'A Aeolian'
             },
             {
                 synthType: 'bass',
                 effectType: 'delay',
                 patternType: 'euclidean',
-                euclideanHits: 5,
-                euclideanSteps: 16,
+                euclideanHits: 3,
+                euclideanSteps: 12,
                 volume: 0.6,
-                scale: 'C Bass'
+                scale: 'A Bass'
             }
         ]
     },
 
     'Dense Polyrhythm': {
         name: 'Dense Polyrhythm',
-        description: 'Complex overlapping rhythms',
-        bpm: 110,
+        description: 'Interlocking cycles creating evolving complexity',
+        bpm: 108,
         voices: [
             {
                 synthType: 'piano',
                 effectType: 'reverb',
                 patternType: 'euclidean',
-                euclideanHits: 7,
+                euclideanHits: 9,
                 euclideanSteps: 16,
                 volume: 0.5,
                 scale: 'D Phrygian'
@@ -256,7 +256,7 @@ export const presets = {
                 synthType: 'piano',
                 effectType: 'delay',
                 patternType: 'euclidean',
-                euclideanHits: 5,
+                euclideanHits: 7,
                 euclideanSteps: 13,
                 volume: 0.4,
                 scale: 'D Phrygian'
@@ -265,10 +265,10 @@ export const presets = {
                 synthType: 'bass',
                 effectType: 'none',
                 patternType: 'euclidean',
-                euclideanHits: 3,
+                euclideanHits: 4,
                 euclideanSteps: 11,
-                volume: 0.7,
-                scale: 'Eb Bass'
+                volume: 0.65,
+                scale: 'D Bass'
             }
         ]
     }

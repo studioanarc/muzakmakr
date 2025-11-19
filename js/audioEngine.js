@@ -50,7 +50,9 @@ export class Voice {
         const scaleConfig = scalePresets[scaleName];
         if (scaleConfig) {
             this.scaleName = scaleName;
-            this.scale = getScaleFrequencies(scaleConfig.root, scaleConfig.type, 2);
+            const octaves = scaleConfig.type === 'bass_notes' ? 3 : 2; // More octaves for bass
+            const startOctave = scaleConfig.octave || 4;
+            this.scale = getScaleFrequencies(scaleConfig.root, scaleConfig.type, octaves, startOctave);
         }
     }
 
